@@ -13,7 +13,7 @@ class Explainer(tf.keras.Model):
 
         self.model = model
         self.mask_act = 'sigmoid'
-        # self.label = tf.argmax(tf.cast(label,tf.float32),axis=-1)
+        self.label = tf.argmax(tf.cast(label,tf.float32),axis=-1)
         self.params = []
 
         self.coeffs = {
@@ -55,7 +55,7 @@ class Explainer(tf.keras.Model):
         else:
             gate_inputs = tf.sigmoid(log_alpha)
 
-        # gate_inputs = tf.sigmoid(log_alpha)
+        gate_inputs = tf.sigmoid(log_alpha)
         return gate_inputs
 
 
