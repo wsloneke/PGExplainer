@@ -2,7 +2,8 @@ import sys
 import os
 from scipy.sparse import load_npz
 sys.path.append('./codes/forgraph/')
-from config import args
+from configs import args
+#import config.args
 from sklearn.metrics import roc_auc_score
 from models import GCN
 from metrics import *
